@@ -98,6 +98,18 @@
             <artifactId>mybatis-plus-generator</artifactId>
             <version>3.4.1</version>
         </dependency>
+
+
+<!--        IP归属-->
+        <dependency>
+            <groupId>org.lionsoul</groupId>
+            <artifactId>ip2region</artifactId>
+            <version>2.6.5</version>
+        </dependency>
+
+
+
+
     </dependencies>
 
     <build>

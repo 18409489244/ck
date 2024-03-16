@@ -2,9 +2,12 @@ package com.lyf.controller;
 import com.lyf.service.CategoryEntityService;
 import com.lyf.service.UserService;
 import com.lyf.util.R;
+import com.lyf.util.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @program: codepractice
@@ -26,12 +29,20 @@ public class UserController {
      */
     @GetMapping("/listUser")
     public R listUser(){
-        return R.ok(userService.listUser());
+        String xxx = "222";
+        return R.ok("保存成功",xxx);
     }
 
 
     @GetMapping("/getData")
     public R getData(){
         return R.ok(categoryEntityService.getData());
+    }
+
+
+
+    @GetMapping("/getData1")
+    public Result getData1(){
+        return Result.ok();
     }
 }

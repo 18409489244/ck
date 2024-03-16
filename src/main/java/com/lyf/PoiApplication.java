@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.lyf.poi.list.mapper")
+@MapperScan("com.lyf.mapper")
 //@ComponentScan("com.lyf.poi.list")
 public class PoiApplication {
 

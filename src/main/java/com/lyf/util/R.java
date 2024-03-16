@@ -32,16 +32,20 @@ public class R<T> implements Serializable
         return restResult(data, SUCCESS, null);
     }
 
+    public static <T> R<T> ok(T data, String msg)
+    {
+        return restResult(data, SUCCESS, msg);
+    }
+
+
+
     public static <T> R<T> resultMap(String key, T data)
     {
         Map resultMap = new HashMap<>();
         resultMap.put(key, data);
         return (R<T>) restResult(resultMap, SUCCESS, null);
     }
-    public static <T> R<T> ok(T data, String msg)
-    {
-        return restResult(data, SUCCESS, msg);
-    }
+
 
     public static <T> R<T> fail()
     {

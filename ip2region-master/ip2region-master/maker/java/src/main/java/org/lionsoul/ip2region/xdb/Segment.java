@@ -19,13 +19,13 @@ public class Segment {
     public static Segment parse(String input) throws Exception {
         final String[] ps = input.trim().split("\\|", 3);
         if (ps.length != 3) {
-            throw new Exception("invalid ip segment `"+input+"`");
+            throw new Exception("invalid ip segment `" + input + "`");
         }
 
         long sip = Util.checkIP(ps[0]);
         long eip = Util.checkIP(ps[1]);
         if (sip > eip) {
-            throw new Exception("start ip `"+ps[0]+"` should not be greater than end ip `"+ps[1]+"`");
+            throw new Exception("start ip `" + ps[0] + "` should not be greater than end ip `" + ps[1] + "`");
         }
 
         return new Segment(sip, eip, ps[2]);
@@ -42,7 +42,7 @@ public class Segment {
         final long sByte1 = (int) ((startIP >> 24) & 0xFF);
         final long eByte1 = (int) ((endIP >> 24) & 0xFF);
         long nSip = startIP;
-        final List<Segment> tList =  new ArrayList<Segment>();
+        final List<Segment> tList = new ArrayList<Segment>();
         for (long i = sByte1; i <= eByte1; i++) {
             long sip = (i << 24) | (nSip & 0xFFFFFF);
             long eip = (i << 24) | 0xFFFFFF;
@@ -79,7 +79,8 @@ public class Segment {
         return segList;
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         return Util.long2ip(startIP) + "|" + Util.long2ip(endIP) + "|" + region;
     }
 }

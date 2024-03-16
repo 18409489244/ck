@@ -142,26 +142,26 @@ public class Maker {
             final String[] ps = line.split("\\|", 3);
             if (ps.length != 3) {
                 br.close();
-                throw new Exception("invalid ip segment line `"+ps[0]+"`");
+                throw new Exception("invalid ip segment line `" + ps[0] + "`");
             }
 
             final long sip = Util.checkIP(ps[0]);
             final long eip = Util.checkIP(ps[1]);
             if (sip > eip) {
                 br.close();
-                throw new Exception("start ip("+ps[0]+") should not be greater than end ip("+ps[1]+")");
+                throw new Exception("start ip(" + ps[0] + ") should not be greater than end ip(" + ps[1] + ")");
             }
 
             if (ps[2].length() < 1) {
                 br.close();
-                throw new Exception("empty region info in segment line `"+ps[2]+"`");
+                throw new Exception("empty region info in segment line `" + ps[2] + "`");
             }
 
             // check the continuity of the data segment
             if (last != null) {
                 if (last.endIP + 1 != sip) {
                     br.close();
-                    throw new Exception("discontinuous data segment: last.eip+1("+sip+") != seg.sip("+eip+", "+ps[0]+")");
+                    throw new Exception("discontinuous data segment: last.eip+1(" + sip + ") != seg.sip(" + eip + ", " + ps[0] + ")");
                 }
             }
 
@@ -218,9 +218,9 @@ public class Maker {
             // get the utf-8 bytes of the region info
             final byte[] regionBuff = seg.region.getBytes(bytesCharset);
             if (regionBuff.length < 1) {
-                throw new Exception("empty region info for segment `"+seg+"`");
+                throw new Exception("empty region info for segment `" + seg + "`");
             } else if (regionBuff.length > 0xFFFF) {
-                throw new Exception("too long region info `"+seg.region+"`: should be less than 65535 bytes");
+                throw new Exception("too long region info `" + seg.region + "`: should be less than 65535 bytes");
             }
 
             // record the current ptr
@@ -241,7 +241,7 @@ public class Maker {
             // we need the region ptr
             DataEntry e = regionPool.get(seg.region);
             if (e == null) {
-                throw new Exception("missing ptr cache for region `"+seg.region+"`");
+                throw new Exception("missing ptr cache for region `" + seg.region + "`");
             }
 
             List<Segment> segList = seg.split();
@@ -250,9 +250,9 @@ public class Maker {
                 long pos = dstHandle.getFilePointer();
 
                 // encode the segment index info
-                Util.write(indexBuff,  0, s.startIP, 4);
-                Util.write(indexBuff,  4, s.endIP, 4);
-                Util.write(indexBuff,  8, e.length, 2);
+                Util.write(indexBuff, 0, s.startIP, 4);
+                Util.write(indexBuff, 4, s.endIP, 4);
+                Util.write(indexBuff, 8, e.length, 2);
                 Util.write(indexBuff, 10, e.ptr, 4);
                 dstHandle.write(indexBuff);
 
@@ -282,7 +282,7 @@ public class Maker {
         dstHandle.write(indexBuff, 0, 8);
 
         log.infof("write done, dataBlocks: %d, indexBlocks: (%d, %d), indexPtr: (%d, %d)",
-            regionPool.size(), segments.size(), counter, startIndexPtr, endIndexPtr);
+                regionPool.size(), segments.size(), counter, startIndexPtr, endIndexPtr);
     }
 
     // end the make, do the resource clean up

@@ -100,7 +100,7 @@
         </dependency>
 
 
-<!--        IP归属-->
+        <!--IP归属-->
         <dependency>
             <groupId>org.lionsoul</groupId>
             <artifactId>ip2region</artifactId>
@@ -108,6 +108,12 @@
         </dependency>
 
 
+        <!-- google表达式计算工具 -->
+        <dependency>
+            <groupId>com.googlecode.aviator</groupId>
+            <artifactId>aviator</artifactId>
+            <version>5.1.4</version>
+        </dependency>
 
 
     </dependencies>

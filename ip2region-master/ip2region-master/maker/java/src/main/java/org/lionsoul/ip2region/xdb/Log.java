@@ -20,11 +20,11 @@ public class Log {
     public static final int ERROR = 3;
 
     // level name
-    public static final String[] level_string = new String[] {
-        "DEBUG",
-        "INFO",
-        "WARN",
-        "ERROR"
+    public static final String[] level_string = new String[]{
+            "DEBUG",
+            "INFO",
+            "WARN",
+            "ERROR"
     };
 
     public final Class<?> baseClass;

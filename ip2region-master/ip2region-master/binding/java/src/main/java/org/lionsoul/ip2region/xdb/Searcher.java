@@ -15,9 +15,9 @@ import java.io.RandomAccessFile;
 public class Searcher {
     // constant defined copied from the xdb maker
     public static final int HeaderInfoLength = 256;
-    public static final int VectorIndexRows  = 256;
-    public static final int VectorIndexCols  = 256;
-    public static final int VectorIndexSize  = 8;
+    public static final int VectorIndexRows = 256;
+    public static final int VectorIndexCols = 256;
+    public static final int VectorIndexSize = 8;
     public static final int SegmentIndexSize = 14;
 
     // random access file handle for file based search
@@ -194,7 +194,7 @@ public class Searcher {
 
     public static byte[] loadContent(RandomAccessFile handle) throws IOException {
         handle.seek(0);
-        final byte[] buff =  new byte[(int) handle.length()];
+        final byte[] buff = new byte[(int) handle.length()];
         int rLen = handle.read(buff);
         if (rLen != buff.length) {
             throw new IOException("incomplete read: read bytes should be " + buff.length);
@@ -217,34 +217,33 @@ public class Searcher {
     /* get an int from a byte array start from the specified offset */
     public static long getIntLong(byte[] b, int offset) {
         return (
-            ((b[offset++] & 0x000000FFL)) |
-            ((b[offset++] <<  8) & 0x0000FF00L) |
-            ((b[offset++] << 16) & 0x00FF0000L) |
-            ((b[offset  ] << 24) & 0xFF000000L)
+                ((b[offset++] & 0x000000FFL)) |
+                        ((b[offset++] << 8) & 0x0000FF00L) |
+                        ((b[offset++] << 16) & 0x00FF0000L) |
+                        ((b[offset] << 24) & 0xFF000000L)
         );
     }
 
     public static int getInt(byte[] b, int offset) {
         return (
-            ((b[offset++] & 0x000000FF)) |
-            ((b[offset++] <<  8) & 0x0000FF00) |
-            ((b[offset++] << 16) & 0x00FF0000) |
-            ((b[offset  ] << 24) & 0xFF000000)
+                ((b[offset++] & 0x000000FF)) |
+                        ((b[offset++] << 8) & 0x0000FF00) |
+                        ((b[offset++] << 16) & 0x00FF0000) |
+                        ((b[offset] << 24) & 0xFF000000)
         );
     }
 
     public static int getInt2(byte[] b, int offset) {
         return (
-            ((b[offset++] & 0x000000FF)) |
-            ((b[offset  ] << 8) & 0x0000FF00)
+                ((b[offset++] & 0x000000FF)) |
+                        ((b[offset] << 8) & 0x0000FF00)
         );
     }
 
     /* long int to ip string */
-    public static String long2ip( long ip )
-    {
+    public static String long2ip(long ip) {
         return String.valueOf((ip >> 24) & 0xFF) + '.' +
-            ((ip >> 16) & 0xFF) + '.' + ((ip >> 8) & 0xFF) + '.' + ((ip) & 0xFF);
+                ((ip >> 16) & 0xFF) + '.' + ((ip >> 8) & 0xFF) + '.' + ((ip) & 0xFF);
     }
 
     public static final byte[] shiftIndex = {24, 16, 8, 0};
@@ -260,7 +259,7 @@ public class Searcher {
         for (int i = 0; i < ps.length; i++) {
             int val = Integer.parseInt(ps[i]);
             if (val > 255) {
-                throw new Exception("ip part `"+ps[i]+"` should be less then 256");
+                throw new Exception("ip part `" + ps[i] + "` should be less then 256");
             }
 
             ipDst |= ((long) val << shiftIndex[i]);

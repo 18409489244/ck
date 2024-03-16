@@ -76,14 +76,14 @@ public class SearchTest {
         Searcher searcher = createSearcher(dbPath, cachePolicy);
         final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.printf("ip2region xdb searcher test program, cachePolicy: %s\ntype 'quit' to exit\n", cachePolicy);
-        while ( true ) {
+        while (true) {
             System.out.print("ip2region>> ");
             String line = reader.readLine().trim();
-            if ( line.length() < 2 ) {
+            if (line.length() < 2) {
                 continue;
             }
 
-            if ( line.equalsIgnoreCase("quit") ) {
+            if (line.equalsIgnoreCase("quit")) {
                 break;
             }
 
@@ -196,7 +196,7 @@ public class SearchTest {
         long took = System.nanoTime() - tStart;
         System.out.printf("Bench finished, {cachePolicy: %s, total: %d, took: %ds, cost: %d μs/op}\n",
                 cachePolicy, count, TimeUnit.NANOSECONDS.toSeconds(took),
-                count == 0 ? 0 : TimeUnit.NANOSECONDS.toMicros(costs/count));
+                count == 0 ? 0 : TimeUnit.NANOSECONDS.toMicros(costs / count));
     }
 
     public static void main(String[] args) {

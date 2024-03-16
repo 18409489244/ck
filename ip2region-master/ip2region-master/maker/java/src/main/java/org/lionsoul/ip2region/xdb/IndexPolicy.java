@@ -19,7 +19,7 @@ public class IndexPolicy {
         } else if ("btree".equals(v)) {
             return BTree;
         } else {
-            throw new Exception("unknown index policy `"+policy+"`");
+            throw new Exception("unknown index policy `" + policy + "`");
         }
     }
 }

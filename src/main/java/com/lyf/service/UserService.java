@@ -11,5 +11,6 @@ import com.lyf.util.R;
  **/
 public interface UserService {
     R listUser();
+
     R listUser2();
 }

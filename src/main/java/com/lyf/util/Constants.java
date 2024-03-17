@@ -15,10 +15,6 @@ public class Constants {
     public static final Integer FAIL = 500;
 
 
-
-
-
-
     public static final String ONE_STR = "1";
 
 }

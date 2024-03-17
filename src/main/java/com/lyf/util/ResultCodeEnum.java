@@ -6,6 +6,7 @@ package com.lyf.util;
  * @author: 刘耀福
  * @create: 2024-03-16 22:22
  **/
+
 /**
  * @Description TODO 返回信息
  * @Author admin
@@ -27,6 +28,7 @@ public enum ResultCodeEnum {
     public String getMessage() {
         return message;
     }
+
     ResultCodeEnum(Integer code, String message) {
         this.code = code;
         this.message = message;

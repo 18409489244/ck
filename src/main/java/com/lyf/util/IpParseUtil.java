@@ -88,7 +88,6 @@ public class IpParseUtil {
     }
 
 
-
     public static void main(String[] args) {
         //只获取省,市
         int[] index = {2, 3};

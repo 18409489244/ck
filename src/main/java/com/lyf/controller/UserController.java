@@ -23,34 +23,36 @@ public class UserController {
 
     @Autowired
     private CategoryEntityService categoryEntityService;
+
     /**
      * 使用反射修改对象属性方法
+     *
      * @return
      */
     @GetMapping("/listUser")
-    public R listUser(){
+    public R listUser() {
         return userService.listUser();
     }
 
     /**
      * 使用xxx修改对象属性方法
+     *
      * @return
      */
     @GetMapping("/listUser2")
-    public R listUser2(){
+    public R listUser2() {
         return userService.listUser2();
     }
 
 
     @GetMapping("/getData")
-    public R getData(){
+    public R getData() {
         return R.ok(categoryEntityService.getData());
     }
 
 
-
     @GetMapping("/getData1")
-    public Result getData1(){
+    public Result getData1() {
         return Result.ok();
     }
 }

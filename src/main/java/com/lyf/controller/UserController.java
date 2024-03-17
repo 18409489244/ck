@@ -24,13 +24,21 @@ public class UserController {
     @Autowired
     private CategoryEntityService categoryEntityService;
     /**
-     * 用户对比包
+     * 使用反射修改对象属性方法
      * @return
      */
     @GetMapping("/listUser")
     public R listUser(){
-        String xxx = "222";
-        return R.ok("保存成功",xxx);
+        return userService.listUser();
+    }
+
+    /**
+     * 使用xxx修改对象属性方法
+     * @return
+     */
+    @GetMapping("/listUser2")
+    public R listUser2(){
+        return userService.listUser2();
     }
 
 

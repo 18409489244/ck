@@ -1,4 +1,4 @@
-package com.lyf.controller;
+package com.lyf.controller.user;
 import com.lyf.service.CategoryEntityService;
 import com.lyf.service.UserService;
 import com.lyf.util.R;

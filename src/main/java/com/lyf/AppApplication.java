@@ -6,11 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("com.lyf.mapper")
-//@ComponentScan("com.lyf.poi.list")
-public class PoiApplication {
+public class AppApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PoiApplication.class, args);
+        SpringApplication.run(AppApplication.class, args);
     }
 
 }

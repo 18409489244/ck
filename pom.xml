@@ -116,6 +116,12 @@
         </dependency>
 
 
+        <!--微信支付依赖-->
+        <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-pay</artifactId>
+            <version>3.4.2</version>
+        </dependency>
     </dependencies>
 
     <build>

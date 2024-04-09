@@ -1,4 +1,5 @@
 package com.lyf.controller.user;
+import com.lyf.entity.User;
 import com.lyf.service.CategoryEntityService;
 import com.lyf.service.UserService;
 import com.lyf.util.R;
@@ -42,6 +43,16 @@ public class UserController {
     @GetMapping("/listUser2")
     public R listUser2() {
         return userService.listUser2();
+    }
+
+    /**
+     * 使用xxx修改对象属性方法
+     *
+     * @return
+     */
+    @GetMapping("/listUser3")
+    public R listUser3() throws Exception {
+        return userService.listUser3();
     }
 
 

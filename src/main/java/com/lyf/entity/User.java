@@ -21,6 +21,10 @@ public class User {
     private int balance;
     private String typeId;
 
+
+    private Integer   pageNum = 1;
+    private Integer   pageSize = 10;
+
     public User(String userId, String username, int balance, String typeId) {
         this.userId = userId;
         this.username = username;

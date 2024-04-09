@@ -5,4 +5,9 @@
     <select id="selectUser" resultType="com.lyf.entity.User">
         select * from t_user
     </select>
+
+
+    <select id="selectUserByTypeId" resultType="com.lyf.entity.User">
+        select * from t_user where type_id = #{typeId}
+    </select>
 </mapper>

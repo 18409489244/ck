@@ -53,10 +53,14 @@ public class GjServiceImpl implements GjService, InitializingBean, ApplicationCo
 
     @Override
     public void gj(String type) {
+        // 一般告警
         if(AlarmLevelEnum.general.getType().equals(type)){
             generalAlarmLevelService.pay();
+            //严重告警
         }else if(AlarmLevelEnum.serious.getType().equals(type)){
             seriousAlarmLevelService.pay();
+        }else{
+            System.out.println("其他告警..");
         }
     }
 

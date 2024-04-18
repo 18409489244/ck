@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @program: codepractice
- * @description: 支付方式优化
- * @author: 刘耀福
  * @create: 2024-04-02 08:39
  **/
 @Slf4j
